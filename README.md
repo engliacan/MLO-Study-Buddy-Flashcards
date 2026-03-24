@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/26198279/README.md)
+[README.md](https://github.com/user-attachments/files/26198476/README.md)
 # MLO Study Buddy Flashcards
 
 A mobile-friendly flashcard app for studying for the Mortgage Loan Originator (MLO) exam. Works on iPhone and Android as a home screen web app.
@@ -17,6 +17,7 @@ A mobile-friendly flashcard app for studying for the Mortgage Loan Originator (M
 - **Streak tracker** — Stay motivated with daily study streaks
 - **Dark / Light mode**
 - **Works offline** — Cards are cached after first load
+- **Auto-update notifications** — App detects when flashcards have been updated and prompts users to download the latest version
 
 ## Study Plan
 
@@ -48,4 +49,4 @@ What is TRID?,TILA-RESPA Integrated Disclosures,Monday
 - **Column B** — Answer
 - **Column C** — Day of the week (Monday through Friday)
 
-Users can tap the refresh button in the app to pull the latest cards.
+Users can tap the refresh button in the app to pull the latest cards. The app also checks for updates automatically — if the flashcards have changed since the last download, an "Update Available" banner will appear on the home screen.
