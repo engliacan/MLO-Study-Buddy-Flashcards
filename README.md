@@ -1,7 +1,7 @@
-[README.md](https://github.com/user-attachments/files/26198245/README.md)
+[README.md](https://github.com/user-attachments/files/26198279/README.md)
 # MLO Study Buddy Flashcards
 
-A mobile-friendly flashcard app for studying for the Mortgage Loan Originator (MLO) exam. Built to run on iPhone as a home screen web app.
+A mobile-friendly flashcard app for studying for the Mortgage Loan Originator (MLO) exam. Works on iPhone and Android as a home screen web app.
 
 ## Features
 
@@ -30,8 +30,8 @@ A mobile-friendly flashcard app for studying for the Mortgage Loan Originator (M
 
 ## How to Use
 
-1. Visit the site on your iPhone in Safari
-2. Tap **Share → Add to Home Screen** for an app-like experience
+1. Visit the site on your phone's browser (Safari on iPhone, Chrome on Android)
+2. **iPhone:** Tap Share → Add to Home Screen | **Android:** Tap the menu → Add to Home Screen
 3. Pick a study mode and start studying
 4. Cards work offline after the first load
 
