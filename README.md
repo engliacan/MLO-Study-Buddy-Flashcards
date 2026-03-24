@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/26198476/README.md)
+[README.md](https://github.com/user-attachments/files/26198729/README.md)
 # MLO Study Buddy Flashcards
 
 A mobile-friendly flashcard app for studying for the Mortgage Loan Originator (MLO) exam. Works on iPhone and Android as a home screen web app.
@@ -35,6 +35,18 @@ A mobile-friendly flashcard app for studying for the Mortgage Loan Originator (M
 2. **iPhone:** Tap Share → Add to Home Screen | **Android:** Tap the menu → Add to Home Screen
 3. Pick a study mode and start studying
 4. Cards work offline after the first load
+
+## Study Modes
+
+Before each session you pick a study mode and can optionally filter by day:
+
+- **All Cards** — Every card in order
+- **Random Shuffle** — Every card in random order
+- **Custom Count** — A random subset of cards (use the slider to pick how many)
+- **Weakest Cards** — Cards you've gotten wrong most often
+- **Favorites** — Only cards you've starred
+
+You can combine any mode with a day filter. For example, select "Wednesday" and "Random Shuffle" to study just Wednesday's 167 cards in random order. Or select "Thursday" and "Custom Count" set to 25 for a quick quiz on just that day's material. If you don't select any days, all 703 cards are included.
 
 ## Updating Flashcards
 
