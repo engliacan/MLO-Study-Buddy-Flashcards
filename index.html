@@ -164,6 +164,8 @@ function fS(ts){const d=Date.now()-ts;if(d<6e4)return'Just now';if(d<36e5)return
 function gFilt(){let f=flt==='unmarked'?cards.filter(c=>c.status===null):flt==='wrong'?cards.filter(c=>c.status==='wrong'):flt==='favorites'?cards.filter(c=>favs.has(c.id)):[...cards];if(sq){const q=sq.toLowerCase();f=f.filter(c=>c.question.toLowerCase().includes(q)||c.answer.toLowerCase().includes(q))}return f}
 function cntBy(s){return cards.filter(c=>c.status===s).length}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+const DAY_ORDER=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+function sortCats(cats){return cats.sort((a,b)=>{const ai=DAY_ORDER.indexOf(a);const bi=DAY_ORDER.indexOf(b);if(ai===-1&&bi===-1)return a.localeCompare(b);if(ai===-1)return 1;if(bi===-1)return-1;return ai-bi})}
 
 function showModal(title,msg,label,onOk){const o=document.createElement('div');o.className='ov';o.innerHTML='<div class="md"><h3>'+title+'</h3><p>'+msg+'</p><div class="btn-rw"><button class="btn btn-s btn-sm" id="_cc">Cancel</button><button class="btn btn-d btn-sm" id="_co">'+(label||'OK')+'</button></div></div>';document.body.appendChild(o);$('_cc').onclick=()=>o.remove();$('_co').onclick=()=>{o.remove();onOk()};o.onclick=e=>{if(e.target===o)o.remove()}}
 
@@ -278,7 +280,7 @@ function showHome(){
   ci=0;fp=false;flt='all';saved=false;sq='';cards=[];
   hdrTitle.textContent='MLO Study Buddy';hdrSub.textContent='Flashcards';
   const d=ld();const stk=gStreak();
-  const cats=[...new Set(allCards.map(c=>c.category))].sort();
+  const cats=sortCats([...new Set(allCards.map(c=>c.category))]);
   const cs=d.cs||{};
   const mast=Object.values(cs).filter(v=>v.stk>=3).length;
   const kn=Object.values(cs).filter(v=>v.stk>0&&v.stk<3).length;
@@ -321,7 +323,7 @@ function showHome(){
 /* ═══ SESSION SETUP ═══ */
 function showSetup(){
   sMode='all';sCnt=Math.min(50,allCards.length);tmOn=false;tmSec=30;flipDir=false;selCats=[];
-  const cats=[...new Set(allCards.map(c=>c.category))].sort();
+  const cats=sortCats([...new Set(allCards.map(c=>c.category))]);
   const cs=gCS();const wkCnt=Object.entries(cs).filter(([k,v])=>v.stk<=0&&v.tot>0).length;
   hdrSub.textContent='Session Setup';
 
@@ -429,7 +431,7 @@ function showHist(){
 /* ═══ DASHBOARD ═══ */
 function showDash(){
   const d=ld();const cs=d.cs||{};const ss=d.sessions;const tot=allCards.length;
-  const cats=[...new Set(allCards.map(c=>c.category))].sort();
+  const cats=sortCats([...new Set(allCards.map(c=>c.category))]);
   const mast=Object.values(cs).filter(v=>v.stk>=3).length;const kn=Object.values(cs).filter(v=>v.stk>0&&v.stk<3).length;const lr=Object.values(cs).filter(v=>(v.tot||0)>0&&v.stk<=0).length;const nw=Math.max(0,tot-mast-kn-lr);
   const tOk=Object.values(cs).reduce((a,v)=>a+v.ok,0);const tNo=Object.values(cs).reduce((a,v)=>a+v.no,0);const tA=tOk+tNo;const oP=tA?Math.round((tOk/tA)*100):0;
 
