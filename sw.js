@@ -1,9 +1,12 @@
-const CACHE_NAME = 'mlo-study-buddy-v4';
+const CACHE_NAME = 'mlo-study-buddy-v5';
 const URLS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
   './flashcards.csv',
+  './apple-touch-icon.png',
+  './icon-192.png',
+  './icon-512.png',
   'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js'
 ];
