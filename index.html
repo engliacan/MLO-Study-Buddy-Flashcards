@@ -341,7 +341,7 @@ function showSetup(){
   function renderModes(){mds.innerHTML=modes.map(m=>'<div class="pn'+(m.dis?' disabled':'')+'" data-md="'+m.k+'" style="cursor:'+(m.dis?'default':'pointer')+';'+(m.dis?'opacity:.4':'')+'"><div class="pn-r"><div><div class="pn-t" style="font-size:14px">'+m.l+'</div><div class="pn-s">'+m.d+'</div></div><div class="bg'+(sMode===m.k?' bg-a':'')+'">'+(sMode===m.k?'✓':'')+'</div></div></div>').join('');
     mds.querySelectorAll('[data-md]').forEach(el=>{if(modes.find(m=>m.k===el.dataset.md)?.dis)return;el.onclick=()=>{sMode=el.dataset.md;renderModes();updCnt()}});
   }
-  function updCnt(){const cr=$('cntR');const cn=$('cntN');if(sMode==='all'||sMode==='weak'||sMode==='favorites'){cr.style.display='none';cn.textContent=sMode==='weak'?wkCnt+' cards':sMode==='favorites'?favs.size+' cards':''}else{cr.style.display='flex';cn.textContent=''}}
+  function updCnt(){const cr=$('cntR');const cn=$('cntN');if(sMode==='custom'){cr.style.display='flex';cn.textContent=''}else{cr.style.display='none';cn.textContent=sMode==='weak'?wkCnt+' cards':sMode==='favorites'?favs.size+' cards':''}}
   renderModes();updCnt();
 
   $('cntS').oninput=e=>{sCnt=parseInt(e.target.value);$('cntV').textContent=sCnt};
